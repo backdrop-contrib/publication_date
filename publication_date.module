@@ -169,8 +169,8 @@ function publication_date_form_node_form_alter(&$form, &$form_state, $form_id) {
       '#description' => t('Leave blank to use the time of form submission (if published now) or the time of publication (if published after saving as a draft or scheduled for later).'),
       '#attributes' => array(
         'date' => array(
-          'min' => $year - $config->get('publication_date_popup_year_start') . '-01-01',
-          'max' => $year + $config->get('publication_date_popup_year_end') . '-12-31',
+          'min' => $year - ((int) $config->get('publication_date_popup_year_start')) . '-01-01',
+          'max' => $year + ((int) $config->get('publication_date_popup_year_end')) . '-12-31',
         ),
       ),
       '#weight' => -1,
